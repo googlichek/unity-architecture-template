@@ -2,9 +2,17 @@
     "name": "Game.Scripts.Core",
     "rootNamespace": "Game.Scripts.Core",
     "references": [
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:84651a3751eca9349aac36a66bba901b",
         "GUID:7495fe3af4aee0d469d20417574c92f9",
-        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
-        "GUID:8dcc8b5e145aef8449406c6a76d73c18"
+        "GUID:6f4e095c0a023a74fad000754a0ddaaa",
+        "GUID:8dcc8b5e145aef8449406c6a76d73c18",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:593a5b492d29ac6448b1ebf7f035ef33",
+        "GUID:029c1c1b674aaae47a6841a0b89ad80e",
+        "GUID:5c01796d064528144a599661eaab93a6",
+        "GUID:dc47925d1a5fa2946bdd37746b2b5d48",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

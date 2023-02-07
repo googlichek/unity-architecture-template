@@ -7,9 +7,9 @@ namespace Game.Scripts.Core
     public abstract class TickerBehaviour : MonoBehaviour, ITicker
     {
         [SerializeReference]
-        protected List<ITickerComponent> components = new List<ITickerComponent>();
+        protected List<TickerComponent> components = new List<TickerComponent>();
 
-        protected UpdateManager _updateManager = default;
+        protected IUpdateLoopService _updateLoopService = default;
 
         protected Priority priority = Priority.Normal;
 
@@ -20,9 +20,9 @@ namespace Game.Scripts.Core
         public int Id => id;
 
         [Inject]
-        protected void Construct(UpdateManager loopUpdater)
+        protected void Construct(IUpdateLoopService loopUpdater)
         {
-            _updateManager = loopUpdater;
+            _updateLoopService = loopUpdater;
         }
 
         void Awake()
@@ -32,7 +32,7 @@ namespace Game.Scripts.Core
 
         void OnEnable()
         {
-            if (_updateManager.CheckIfAttached(this))
+            if (_updateLoopService.CheckIfAttached(this))
             {
                 Enable();
             }
@@ -40,7 +40,7 @@ namespace Game.Scripts.Core
 
         void OnDisable()
         {
-            if (_updateManager.CheckIfDetached(this))
+            if (_updateLoopService.CheckIfDetached(this))
             {
                 Disable();
             }
@@ -134,10 +134,10 @@ namespace Game.Scripts.Core
         }
 
         /// <summary>
-        /// Adds <see cref="ITickerComponent"/> to the list of updating components.
+        /// Adds <see cref="TickerComponent"/> to the list of updating components.
         /// </summary>
         /// <param name="component"></param>
-        protected void AttachComponent(ITickerComponent component)
+        protected void AttachComponent(TickerComponent component)
         {
             if (components.Contains(component))
             {
@@ -149,9 +149,9 @@ namespace Game.Scripts.Core
         }
 
         /// <summary>
-        /// Removes <see cref="ITickerComponent"/> from the list of updating components.
+        /// Removes <see cref="TickerComponent"/> from the list of updating components.
         /// </summary>
-        protected void DetachComponent(ITickerComponent component)
+        protected void DetachComponent(TickerComponent component)
         {
             if (!components.Contains(component))
             {
