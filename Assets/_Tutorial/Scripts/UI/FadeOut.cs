@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Tutorial.Scripts.Utils
 {
-    public class FadeOut : TickerBehaviour
+    public class FadeOut : TickerComponent
     {
         [SerializeField]
         [Range(0, 5)]

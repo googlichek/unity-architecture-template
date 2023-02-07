@@ -1,15 +1,14 @@
 using Game.Scripts.Core;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Tutorial.Scripts.Utils
 {
-    public class SelectAssetButton : TickerBehaviour
+    public class OpenLinkButton : TickerComponent
     {
 #if UNITY_EDITOR
         [SerializeField]
-        private string _pathToAsset = default;
+        private string _url = default;
 
         private Button _button = default;
 
@@ -31,7 +30,7 @@ namespace Tutorial.Scripts.Utils
 
         private void OnButtonClick()
         {
-            Selection.activeObject = AssetDatabase.LoadMainAssetAtPath(_pathToAsset);
+            Application.OpenURL(_url);
         }
     }
 #endif

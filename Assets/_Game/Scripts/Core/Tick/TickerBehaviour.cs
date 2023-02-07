@@ -6,12 +6,13 @@ namespace Game.Scripts.Core
 {
     public abstract class TickerBehaviour : MonoBehaviour, ITicker
     {
+        [SerializeField]
+        protected Priority priority = Priority.Normal;
+
         [SerializeReference]
         protected List<TickerComponent> components = new List<TickerComponent>();
 
         protected IUpdateLoopService _updateLoopService = default;
-
-        protected Priority priority = Priority.Normal;
 
         protected int id = 0;
 

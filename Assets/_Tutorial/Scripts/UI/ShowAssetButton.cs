@@ -1,25 +1,17 @@
 using Game.Scripts.Core;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
-using Zenject;
 
 namespace Tutorial.Scripts.Utils
 {
-    public class NextSceneButton : TickerComponent
+    public class ShowAssetButton : TickerComponent
     {
+#if UNITY_EDITOR
         [SerializeField]
-        private AssetReference _nextScene = default;
-
-        private ISceneLoadingService _sceneLoadingService;
+        private string _pathToAsset = default;
 
         private Button _button = default;
-
-        [Inject]
-        void Construct(ISceneLoadingService sceneLoadingService)
-        {
-            _sceneLoadingService = sceneLoadingService;
-        }
 
         public override void Init()
         {
@@ -37,9 +29,10 @@ namespace Tutorial.Scripts.Utils
             _button.onClick.RemoveListener(OnButtonClick);
         }
 
-        private async void OnButtonClick()
+        private void OnButtonClick()
         {
-            await _sceneLoadingService.LoadScene(_nextScene);
+            Selection.activeObject = AssetDatabase.LoadMainAssetAtPath(_pathToAsset);
         }
     }
+#endif
 }

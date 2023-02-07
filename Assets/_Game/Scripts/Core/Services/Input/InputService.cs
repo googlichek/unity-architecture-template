@@ -34,7 +34,7 @@ namespace Game.Scripts.Core
 
         public override void Init()
         {
-            priority = Core.Priority.High;
+            base.Init();
 
             Instantiate(_rewiredInputManagerTemplate, transform.parent);
 
