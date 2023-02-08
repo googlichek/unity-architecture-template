@@ -756,8 +756,10 @@ PrefabInstance:
         a solid foundation to just start making games.\r\n\r\nI\u2019m also a proponent
         of using Dependency Injection, so I would love to showcase how to use it
         to loosen code coupling.\r\n\nYou may want to frequently look closer at things
-        in the scene hierarchy or in a Project tab, so don't maximize the Game tab!\n\nAnd
-        now without further ado, let's start!"
+        in the scene hierarchy or in a Project tab, so don't maximize the Game tab!\n\nPlease
+        be aware that I use several paid plugins in this project. Please also buy
+        them if you want to use them for personal projects.\n\nAnd now without any
+        further ado, let's start!"
       objectReference: {fileID: 0}
     - target: {fileID: 7794142972227972567, guid: 58da9931c9dba9746800c709fd34ca67, type: 3}
       propertyPath: m_Pivot.x
