@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Tutorial
+  m_EditorClassIdentifier: 
+  m_GroupName: Tutorial
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ee0ac1a6935b7934495c1eff3eec79fb
+  m_SerializeEntries:
+  - m_GUID: cca57ff7adb2af2419fcbe5186c2c315
+    m_Address: "Sample001 \u2013 Introduction to DI"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: d2526ff303b5d4943b45fe26ed5b8ba9
+    m_Address: "Sample000 \u2013 Introduction to the Project"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 70fbbfac861252b4bb556673c2790a43
+    m_Address: "Sample003 \u2013 Installers"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 5145a08b14ac45b448b0fc0a115cd545
+    m_Address: "Sample002 \u2013 DI Contexts"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 5a547c21b1e85564d9aebfcdcc41942e
+    m_Address: "Sample004 \u2013 Injecting Dependencies"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 09611f58f544c8645b4dd6c3114cc75e
+    m_Address: "Sample005 \u2013 Custom Game Loop Update"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: a93538199735595439368a944dadea76
+    m_Address: "Sample006 \u2013 Tickers"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 7e1c476d16e42724b8fa4d706d4e1176, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 22a8b202f65047142ab3f15a4f3f382e, type: 2}
+    - {fileID: 11400000, guid: 1ad29a355e27a3b469c45e6b4eefdaa1, type: 2}

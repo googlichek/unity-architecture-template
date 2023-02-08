@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 3
+  hasComponents: 0
   components: []
   _rewiredInputManagerTemplate: {fileID: 5267563817206731553, guid: 40d84daac05f73849bd4fea473666f52, type: 3}
 --- !u!114 &5964022579606179473
@@ -74,4 +75,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 3
+  hasComponents: 0
   components: []

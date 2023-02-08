@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _duration: 0.75
-  _delay: 1.75
+  _delay: 2.25
   _ease: 15
 --- !u!1 &453492598678695059
 GameObject:
@@ -289,6 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 2
+  hasComponents: 1
   components:
   - {fileID: 453492598678695069}
   - {fileID: 8421297353684014665}
@@ -305,6 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341c1dd3952784a4bbbe6547c79ee8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _location: 0
+  _targetGameObject: {fileID: 0}
   _pathToAsset: 
 --- !u!114 &8421297353684014665
 MonoBehaviour:
@@ -319,5 +322,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _duration: 0.75
-  _delay: 1.75
+  _delay: 2.25
   _ease: 15

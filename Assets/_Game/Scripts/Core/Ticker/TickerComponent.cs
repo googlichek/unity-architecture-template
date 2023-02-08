@@ -2,9 +2,6 @@
 
 namespace Game.Scripts.Core
 {
-    /// <summary>
-    /// Sub-components of game objects should be inherited from this.
-    /// </summary>
     public abstract class TickerComponent : MonoBehaviour, ITickerComponent
     {
         protected int id;

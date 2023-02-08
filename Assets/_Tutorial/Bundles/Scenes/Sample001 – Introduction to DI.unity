@@ -123,6 +123,107 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &250665410
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1516503860}
+    m_Modifications:
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113665, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081797973591113678, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: m_Name
+      value: BackSceneButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088450411063183542, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
+      propertyPath: _nextScene.m_AssetGUID
+      value: d2526ff303b5d4943b45fe26ed5b8ba9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fdb52813dd38ffc47b16915b60b1cec8, type: 3}
 --- !u!1 &451226151
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,21 +749,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7794142972227972566, guid: 58da9931c9dba9746800c709fd34ca67, type: 3}
       propertyPath: m_text
-      value: 'Dependency injection is a design pattern in which an object or function
-        receives other objects or functions that it depends on. A form of inversion
-        of control, dependency injection aims to separate the concerns of constructing
-        objects and using them, leading to loosely coupled programs.
+      value: 'Dependency Injection (DI) is a design pattern where objects or functions
+        receive their dependencies through external sources, promoting loose coupling
+        in the program.
 
 
-        In
-        this project we''re going to use Extenject (formerly known as Zenject) DI
-        Framework. It''s a bit overloaded with functionality, but we''re going to
-        trim all the fat and use only what''s nessessary.
-
-
-        We''re going
-        to use it in such a way that it will be quite easy to replace it with other
-        DI frameworks, if the need arises.'
+        We''ll be using the Extenject (formerly Zenject)
+        DI framework, which has a lot of functionality, but we''ll only utilize what''s
+        necessary. It will also be designed for easy replacement with other DI frameworks
+        if needed.'
       objectReference: {fileID: 0}
     - target: {fileID: 7794142972227972567, guid: 58da9931c9dba9746800c709fd34ca67, type: 3}
       propertyPath: m_Pivot.x
@@ -929,7 +1024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2081797973591113665, guid: 40d8f2616ebc5c546bc2903dca2bcf36, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2081797973591113665, guid: 40d8f2616ebc5c546bc2903dca2bcf36, type: 3}
       propertyPath: m_AnchorMax.x
@@ -997,7 +1092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5088450411063183542, guid: 40d8f2616ebc5c546bc2903dca2bcf36, type: 3}
       propertyPath: _nextScene.m_AssetGUID
-      value: 70fbbfac861252b4bb556673c2790a43
+      value: 5145a08b14ac45b448b0fc0a115cd545
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40d8f2616ebc5c546bc2903dca2bcf36, type: 3}

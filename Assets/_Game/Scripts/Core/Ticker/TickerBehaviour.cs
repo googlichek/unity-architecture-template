@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -9,7 +10,11 @@ namespace Game.Scripts.Core
         [SerializeField]
         protected Priority priority = Priority.Normal;
 
+        [SerializeField]
+        protected bool hasComponents = true;
+
         [SerializeReference]
+        [ShowIf("hasComponents")]
         protected List<TickerComponent> components = new List<TickerComponent>();
 
         protected IUpdateLoopService _updateLoopService = default;
@@ -134,10 +139,6 @@ namespace Game.Scripts.Core
             components.Clear();
         }
 
-        /// <summary>
-        /// Adds <see cref="TickerComponent"/> to the list of updating components.
-        /// </summary>
-        /// <param name="component"></param>
         protected void AttachComponent(TickerComponent component)
         {
             if (components.Contains(component))
@@ -149,9 +150,6 @@ namespace Game.Scripts.Core
             component.Init();
         }
 
-        /// <summary>
-        /// Removes <see cref="TickerComponent"/> from the list of updating components.
-        /// </summary>
         protected void DetachComponent(TickerComponent component)
         {
             if (!components.Contains(component))

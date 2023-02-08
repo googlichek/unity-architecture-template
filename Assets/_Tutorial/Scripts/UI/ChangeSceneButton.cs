@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Tutorial.Scripts.Utils
 {
-    public class NextSceneButton : TickerComponent
+    public class ChangeSceneButton : TickerComponent
     {
         [SerializeField]
         private AssetReference _nextScene = default;
@@ -39,6 +39,12 @@ namespace Tutorial.Scripts.Utils
 
         private async void OnButtonClick()
         {
+            if (string.IsNullOrEmpty(_nextScene.AssetGUID))
+            {
+                Debug.LogWarningFormat("No next scene referenced in the component", this);
+                return;
+            }
+
             await _sceneLoadingService.LoadScene(_nextScene);
         }
     }

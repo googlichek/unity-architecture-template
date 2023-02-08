@@ -6,6 +6,7 @@ namespace Tutorial.Scripts.Utils
     {
         public override void InstallBindings()
         {
+            // There is nothing going on here for now, but there may be later.
         }
     }
 }
