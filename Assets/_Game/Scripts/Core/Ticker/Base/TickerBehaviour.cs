@@ -15,7 +15,7 @@ namespace Game.Scripts.Core
 
         [SerializeReference]
         [ShowIf("hasComponents")]
-        protected List<TickerComponent> components = new List<TickerComponent>();
+        protected List<TickerComponent> components = new();
 
         protected IUpdateLoopService _updateLoopService = default;
 
@@ -137,28 +137,6 @@ namespace Game.Scripts.Core
             }
 
             components.Clear();
-        }
-
-        protected void AttachComponent(TickerComponent component)
-        {
-            if (components.Contains(component))
-            {
-                return;
-            }
-
-            components.Add(component);
-            component.Init();
-        }
-
-        protected void DetachComponent(TickerComponent component)
-        {
-            if (!components.Contains(component))
-            {
-                return;
-            }
-
-            component.Dispose();
-            components.Remove(component);
         }
     }
 }
