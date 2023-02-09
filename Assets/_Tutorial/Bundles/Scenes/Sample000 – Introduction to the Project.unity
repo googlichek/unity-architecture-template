@@ -753,13 +753,21 @@ PrefabInstance:
         tutorials is that there are almost no in-depth guides that cover topics as
         important as project architecture.\r\n\r\nIn the end I decided to build a
         tempate project where I would setup everything in a way where I would have
-        a solid foundation to just start making games.\r\n\r\nI\u2019m also a proponent
-        of using Dependency Injection, so I would love to showcase how to use it
-        to loosen code coupling.\r\n\nYou may want to frequently look closer at things
-        in the scene hierarchy or in a Project tab, so don't maximize the Game tab!\n\nPlease
-        be aware that I use several paid plugins in this project. Please also buy
-        them if you want to use them for personal projects.\n\nAnd now without any
-        further ado, let's start!"
+        a solid foundation to just start making games.\r\n\nWe'll start by taking
+        a look at Dependency Injection. It's a key building block for this project
+        and it's important to understand it before moving forward. Next, I want to
+        show you my personal approach to updating the game loop and how it can make
+        managing gameplay smoother and more efficient. Finally, we'll check out some
+        popular tools, services, and design patterns that are widely used in game
+        development.\n\nYou may want to frequently look closer at things in the scene
+        hierarchy or in a Project tab, so don't maximize the Game tab!\n\nI want
+        to cover the most important points, but I'll try to not overload you with
+        too many details and walls of text. I'm counting on you to take a closer
+        look at the code and figure things out on your own. Don't worry, I'll give
+        you some pointers on where to focus your investigation.\n\nAnd please be
+        aware that I use several paid plugins in this project. Please also buy them
+        if you want to use them for personal projects.\n\nNow without any further
+        ado, let's start!"
       objectReference: {fileID: 0}
     - target: {fileID: 7794142972227972567, guid: 58da9931c9dba9746800c709fd34ca67, type: 3}
       propertyPath: m_Pivot.x

@@ -3,9 +3,9 @@ using Zenject;
 
 namespace Game.Scripts.Core
 {
-    public class MainInstaller : MonoInstaller
+    public class CoreServiceInstaller : MonoInstaller
     {
-        [SerializeField]
+        [SerializeReference]
         private GameObject _app = default;
 
         public override void InstallBindings()

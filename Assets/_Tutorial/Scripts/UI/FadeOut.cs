@@ -1,5 +1,6 @@
 using DG.Tweening;
 using Game.Scripts.Core;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,14 +8,17 @@ namespace Tutorial.Scripts.Utils
 {
     public class FadeOut : TickerComponent
     {
+        [FoldoutGroup("Tweening Settings")]
         [SerializeField]
         [Range(0, 5)]
         private float _duration = 0.5f;
 
+        [FoldoutGroup("Tweening Settings")]
         [SerializeField]
         [Range(0, 5)]
         private float _delay = 0.5f;
 
+        [FoldoutGroup("Tweening Settings")]
         [SerializeField]
         private Ease _ease = Ease.OutQuint;
 

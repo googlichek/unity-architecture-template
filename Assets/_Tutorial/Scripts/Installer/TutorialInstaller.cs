@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace Tutorial.Scripts.Utils
+namespace Tutorial.Scripts
 {
     public class TutorialInstaller : MonoInstaller
     {

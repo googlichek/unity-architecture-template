@@ -135,8 +135,6 @@ namespace Game.Scripts.Core
             {
                 components[i].Dispose();
             }
-
-            components.Clear();
         }
     }
 }

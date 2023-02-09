@@ -1,16 +1,15 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Scripts.Core
 {
     public class UpdateLoopService : MonoBehaviour, IUpdateLoopService
     {
-        private readonly List<ITicker> _lowPriorityTickers =
-            new List<ITicker>(Constants.MaxUpdatedObjectsWithLowPriority);
-        private readonly List<ITicker> _normalPriorityTickers =
-            new List<ITicker>(Constants.MaxUpdatedObjectsWithNormalPriority);
-        private readonly List<ITicker> _highPriorityTickers =
-            new List<ITicker>(Constants.MaxUpdatedObjectsWithHighPriority);
+        private readonly ITicker[] _highPriorityTickers =
+            new ITicker[Constants.MaxUpdatedObjectsWithHighPriority];
+        private readonly ITicker[] _normalPriorityTickers =
+            new ITicker[Constants.MaxUpdatedObjectsWithNormalPriority];
+        private readonly ITicker[] _lowPriorityTickers =
+            new ITicker[Constants.MaxUpdatedObjectsWithLowPriority];
 
         private int _instanceCounter;
         private int _tick;
@@ -24,17 +23,17 @@ namespace Game.Scripts.Core
 
         void FixedUpdate()
         {
-            for (int i = 0; i < _highPriorityTickers.Count; i++)
+            for (int i = 0; i < _highPriorityTickers.Length; i++)
             {
                 _highPriorityTickers[i]?.PhysicsTick();
             }
 
-            for (int i = 0; i < _normalPriorityTickers.Count; i++)
+            for (int i = 0; i < _normalPriorityTickers.Length; i++)
             {
                 _normalPriorityTickers[i]?.PhysicsTick();
             }
 
-            for (int i = 0; i < _lowPriorityTickers.Count; i++)
+            for (int i = 0; i < _lowPriorityTickers.Length; i++)
             {
                 _lowPriorityTickers[i]?.PhysicsTick();
             }
@@ -44,17 +43,17 @@ namespace Game.Scripts.Core
         {
             _tick++;
 
-            for (int i = 0; i < _highPriorityTickers.Count; i++)
+            for (int i = 0; i < _highPriorityTickers.Length; i++)
             {
                 _highPriorityTickers[i]?.Tick();
             }
 
-            for (int i = 0; i < _normalPriorityTickers.Count; i++)
+            for (int i = 0; i < _normalPriorityTickers.Length; i++)
             {
                 _normalPriorityTickers[i]?.Tick();
             }
 
-            for (int i = 0; i < _lowPriorityTickers.Count; i++)
+            for (int i = 0; i < _lowPriorityTickers.Length; i++)
             {
                 _lowPriorityTickers[i]?.Tick();
             }
@@ -62,17 +61,17 @@ namespace Game.Scripts.Core
 
         void LateUpdate()
         {
-            for (int i = 0; i < _highPriorityTickers.Count; i++)
+            for (int i = 0; i < _highPriorityTickers.Length; i++)
             {
                 _highPriorityTickers[i]?.CameraTick();
             }
 
-            for (int i = 0; i < _normalPriorityTickers.Count; i++)
+            for (int i = 0; i < _normalPriorityTickers.Length; i++)
             {
                 _normalPriorityTickers[i]?.CameraTick();
             }
 
-            for (int i = 0; i < _lowPriorityTickers.Count; i++)
+            for (int i = 0; i < _lowPriorityTickers.Length; i++)
             {
                 _lowPriorityTickers[i]?.CameraTick();
             }
@@ -90,13 +89,7 @@ namespace Game.Scripts.Core
             {
                 case Priority.High:
                 {
-                    var containsInTickers = _highPriorityTickers.Contains(ticker);
-                    if (containsInTickers)
-                    {
-                        return false;
-                    }
-
-                    for (int index = 0; index < _highPriorityTickers.Count; index++)
+                    for (int index = 0; index < _highPriorityTickers.Length; index++)
                     {
                         if (_highPriorityTickers[index] == null)
                         {
@@ -110,13 +103,7 @@ namespace Game.Scripts.Core
 
                 case Priority.Normal:
                 {
-                    var containsInTickers = _normalPriorityTickers.Contains(ticker);
-                    if (containsInTickers)
-                    {
-                        return false;
-                    }
-
-                    for (int index = 0; index < _normalPriorityTickers.Count; index++)
+                    for (int index = 0; index < _normalPriorityTickers.Length; index++)
                     {
                         if (_normalPriorityTickers[index] == null)
                         {
@@ -130,13 +117,7 @@ namespace Game.Scripts.Core
 
                 case Priority.Low:
                 {
-                    var containsInTickers = _lowPriorityTickers.Contains(ticker);
-                    if (containsInTickers)
-                    {
-                        return false;
-                    }
-
-                    for (int index = 0; index < _lowPriorityTickers.Count; index++)
+                    for (int index = 0; index < _lowPriorityTickers.Length; index++)
                     {
                         if (_lowPriorityTickers[index] == null)
                         {
@@ -149,7 +130,7 @@ namespace Game.Scripts.Core
                 }
             }
 
-            return true;
+            return false;
         }
 
         public bool CheckIfDetached(ITicker ticker)
@@ -158,13 +139,7 @@ namespace Game.Scripts.Core
             {
                 case Priority.High:
                 {
-                    var containsInTickers = _highPriorityTickers.Contains(ticker);
-                    if (containsInTickers)
-                    {
-                        return false;
-                    }
-
-                    for (int index = 0; index < _highPriorityTickers.Count; index++)
+                    for (int index = 0; index < _highPriorityTickers.Length; index++)
                     {
                         if (_highPriorityTickers[index] == ticker)
                         {
@@ -178,13 +153,7 @@ namespace Game.Scripts.Core
 
                 case Priority.Normal:
                 {
-                    var containsInTickers = _normalPriorityTickers.Contains(ticker);
-                    if (containsInTickers)
-                    {
-                        return false;
-                    }
-
-                    for (int index = 0; index < _normalPriorityTickers.Count; index++)
+                    for (int index = 0; index < _normalPriorityTickers.Length; index++)
                     {
                         if (_normalPriorityTickers[index] == ticker)
                         {
@@ -197,13 +166,7 @@ namespace Game.Scripts.Core
                 }
                 case Priority.Low:
                 {
-                    var containsInTickers = _lowPriorityTickers.Contains(ticker);
-                    if (containsInTickers)
-                    {
-                        return false;
-                    }
-
-                    for (int index = 0; index < _lowPriorityTickers.Count; index++)
+                    for (int index = 0; index < _lowPriorityTickers.Length; index++)
                     {
                         if (_lowPriorityTickers[index] == ticker)
                         {
@@ -216,7 +179,7 @@ namespace Game.Scripts.Core
                 }
             }
 
-            return true;
+            return false;
         }
     }
 }

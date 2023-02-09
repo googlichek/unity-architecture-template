@@ -43,6 +43,8 @@ namespace Game.Scripts.Core
 
         public override void Tick()
         {
+            base.Tick();
+
             HandleInput();
         }
 

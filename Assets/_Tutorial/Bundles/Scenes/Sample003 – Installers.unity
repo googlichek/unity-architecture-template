@@ -342,7 +342,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 453492598104378760, guid: 618bd9def62e60243b431b64fa7f30ad, type: 3}
       propertyPath: m_text
-      value: Main Installer
+      value: Main Installers
       objectReference: {fileID: 0}
     - target: {fileID: 453492598678695059, guid: 618bd9def62e60243b431b64fa7f30ad, type: 3}
       propertyPath: m_Name
@@ -438,7 +438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 453492598678695069, guid: 618bd9def62e60243b431b64fa7f30ad, type: 3}
       propertyPath: _pathToAsset
-      value: Assets/_Game/Scripts/Core/Installers/MainInstaller.cs
+      value: Assets/_Game/Scripts/Core/Installers
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 618bd9def62e60243b431b64fa7f30ad, type: 3}
@@ -629,7 +629,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 453492598104378760, guid: 618bd9def62e60243b431b64fa7f30ad, type: 3}
       propertyPath: m_text
-      value: Tutorial Installer
+      value: Tutorial Installers
       objectReference: {fileID: 0}
     - target: {fileID: 453492598678695059, guid: 618bd9def62e60243b431b64fa7f30ad, type: 3}
       propertyPath: m_Name
@@ -725,7 +725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 453492598678695069, guid: 618bd9def62e60243b431b64fa7f30ad, type: 3}
       propertyPath: _pathToAsset
-      value: Assets/_Tutorial/Scripts/Installer/TutorialInstaller.cs
+      value: Assets/_Tutorial/Scripts/Installer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 618bd9def62e60243b431b64fa7f30ad, type: 3}
@@ -1195,10 +1195,9 @@ PrefabInstance:
         starts.
 
 
-        Please take the time to understand the Installers in this
-        project, including the bindings they perform, before we dive deeper into
-        exploring injecting dependencies onto MonoBehaviours. As a best practice,
-        I suggest attaching the Installers to context GameObjects.'
+        As a best practice, I suggest attaching the Installers
+        to context GameObjects. Please take your time to dig around a little bit.
+        Look at Contexts and Installers and try to understand how they work together.'
       objectReference: {fileID: 0}
     - target: {fileID: 7794142972227972567, guid: 58da9931c9dba9746800c709fd34ca67, type: 3}
       propertyPath: m_Pivot.x

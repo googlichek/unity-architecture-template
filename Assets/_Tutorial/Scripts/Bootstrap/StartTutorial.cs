@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;
 
-namespace Tutorial.Scripts.Utils
+namespace Tutorial.Scripts
 {
     public class StartTutorial : TickerBehaviour
     {
