@@ -4,6 +4,8 @@ namespace Game.Scripts.Core
     {
         protected IBasePool<PooledTickerBehaviour> pool = default;
 
+        public IBasePool<PooledTickerBehaviour> Pool => pool;
+
         public void Setup(IBasePool<PooledTickerBehaviour> basePool)
         {
             pool = basePool;

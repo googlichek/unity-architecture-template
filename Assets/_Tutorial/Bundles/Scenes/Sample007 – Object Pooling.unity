@@ -549,7 +549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894717394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25, y: 0, z: 40}
+  m_LocalPosition: {x: 5, y: 0, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -568,12 +568,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46367600f0d55994f8e8113e23f76f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectTemplate: {fileID: 7015172370291549487, guid: 7c1e96fe9e9728745bdd5f2f4e34c5c6, type: 3}
+  _objectTemplate: {fileID: 194126502140952909, guid: 7c1e96fe9e9728745bdd5f2f4e34c5c6, type: 3}
   _shouldUsePoolDefaults: 0
   _root: {fileID: 894717395}
   _initialSize: 10
   _maxSize: 20
-  _spawnDelay: 0.75
+  _spawnDelay: 0.6
 --- !u!114 &894717397
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,8 +3,11 @@ using UnityEngine;
 
 namespace Tutorial.Scripts.Utils
 {
-    public class SelfdestroyingCube : PooledTickerBehaviour
+    public class SelfDestructionComponent : TickerComponent
     {
+        [SerializeReference]
+        private PooledTickerBehaviour _pooledTickerBehaviour = default;
+
         [SerializeField]
         [Range(0, 10)]
         private float _lifeTime = 5f;
@@ -26,7 +29,7 @@ namespace Tutorial.Scripts.Utils
 
             if (_remainingLifeTime < 0)
             {
-                pool.Release(this);
+                _pooledTickerBehaviour.Pool.Release(_pooledTickerBehaviour);
             }
         }
     }

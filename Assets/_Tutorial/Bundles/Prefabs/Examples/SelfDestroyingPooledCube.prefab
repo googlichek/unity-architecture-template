@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7015172370291549484}
   - component: {fileID: 7015172370291549485}
   - component: {fileID: 7015172370291549486}
+  - component: {fileID: 194126502140952909}
   - component: {fileID: 7015172370291549487}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: SelfDestroyingPooledCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,6 +99,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &194126502140952909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015172370291549481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12dbeda3d40dab044ae863651e46ced0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priority: 2
+  hasComponents: 1
+  components:
+  - {fileID: 7015172370291549487}
 --- !u!114 &7015172370291549487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +127,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f4fbfa081bec9479348036d632904b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 2
-  hasComponents: 1
-  components: []
+  _pooledTickerBehaviour: {fileID: 194126502140952909}
   _lifeTime: 5
