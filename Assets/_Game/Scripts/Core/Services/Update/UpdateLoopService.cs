@@ -164,6 +164,7 @@ namespace Game.Scripts.Core
 
                     break;
                 }
+
                 case Priority.Low:
                 {
                     for (int index = 0; index < _lowPriorityTickers.Length; index++)

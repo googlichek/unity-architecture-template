@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 14822170}
   - component: {fileID: 14822171}
+  - component: {fileID: 14822173}
+  - component: {fileID: 14822172}
   m_Layer: 0
   m_Name: StartTutorial
   m_TagString: Untagged
@@ -175,6 +177,38 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+--- !u!114 &14822172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14822169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb30af9a991554c4b8f54c1ad7cafc2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &14822173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14822169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f48fcde9681a2a42971406425ff676c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectTemplate: {fileID: 0}
+  _shouldUsePoolDefaults: 1
+  _root: {fileID: 0}
+  _initialSize: 10
+  _maxSize: 20
 --- !u!1001 &76361543
 PrefabInstance:
   m_ObjectHideFlags: 0

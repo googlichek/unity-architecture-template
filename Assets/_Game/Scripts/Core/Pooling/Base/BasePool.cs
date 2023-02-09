@@ -4,7 +4,8 @@ using Zenject;
 
 namespace Game.Scripts.Core
 {
-    public abstract class BasePool<T> : TickerComponent where T : TickerBehaviour
+    public abstract class BasePool<T> : TickerComponent, IBasePool<T>
+        where T : TickerBehaviour, IPooledObject<T>
     {
         private T _prefab = default;
 
@@ -56,6 +57,8 @@ namespace Game.Scripts.Core
         protected virtual T CreateInstance(Transform root)
         {
             var instance = _diContainer.InstantiatePrefabForComponent<T>(_prefab, root);
+            instance.Setup(this);
+
             return instance;
         }
 
