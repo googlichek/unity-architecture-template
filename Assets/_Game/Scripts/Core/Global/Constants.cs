@@ -5,4 +5,6 @@
     public const int MaxUpdatedObjectsWithLowPriority = 2048;
     public const int MaxUpdatedObjectsWithNormalPriority = 2048;
     public const int MaxUpdatedObjectsWithHighPriority = 2048;
+
+    public const string ProgressKey = "Progress";
 }

@@ -27,6 +27,12 @@ namespace Game.Scripts.Core
                 .FromComponentInHierarchy()
                 .AsSingle()
                 .NonLazy();
+
+            Container
+                .Bind<ISaveLoadService>()
+                .FromComponentInHierarchy()
+                .AsSingle()
+                .NonLazy();
         }
     }
 }
