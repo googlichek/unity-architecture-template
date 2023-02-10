@@ -4,8 +4,8 @@ using Zenject;
 
 namespace Game.Scripts.Core
 {
-    public abstract class BasePool<T> : TickerComponent, IBasePool<T>
-        where T : TickerBehaviour, IPooledObject<T>
+    public abstract class BasePool<T> : TickerComponent, IBasePoolRelease<T>
+        where T : TickerBehaviour, ISelfReleasingFromPool<T>
     {
         private T _prefab = default;
 

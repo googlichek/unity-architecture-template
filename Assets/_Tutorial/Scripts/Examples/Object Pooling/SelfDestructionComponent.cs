@@ -29,7 +29,7 @@ namespace Tutorial.Scripts.Utils
 
             if (_remainingLifeTime < 0)
             {
-                _pooledTickerBehaviour.Pool.Release(_pooledTickerBehaviour);
+                _pooledTickerBehaviour.ReleaseSelf();
             }
         }
     }

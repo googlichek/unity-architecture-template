@@ -1,9 +1,7 @@
 namespace Game.Scripts.Core
 {
-    public interface IBasePool<T>
+    public interface IBasePoolRelease<T>
     {
-        public T Get();
-
         public void Release(T instance);
     }
 }

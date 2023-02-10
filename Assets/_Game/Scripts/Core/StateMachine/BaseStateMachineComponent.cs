@@ -19,20 +19,27 @@ namespace Game.Scripts.Core
 
         public TState ActiveState => currentState;
 
-        public override void Enable()
-        {
-            ResetState();
-        }
-
         public override void Tick()
         {
             UpdateState(currentNode.GetNextState());
             currentNode.Tick();
         }
 
-        protected virtual void ResetState()
+        protected virtual void ResetState(TState state)
         {
-            currentNode.Enter(currentState);
+            currentState = state;
+            for (int i = 0; i < nodes.Count; i++)
+            {
+                var node = nodes[i];
+                if (!StaticMethods.EnumEquals(node.NodeState, currentState))
+                {
+                    continue;
+                }
+
+                currentNode = node;
+                currentNode.Enter(currentState);
+                break;
+            }
         }
 
         protected void UpdateState(TState nextState)

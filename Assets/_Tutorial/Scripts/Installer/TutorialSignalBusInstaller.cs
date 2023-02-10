@@ -1,4 +1,3 @@
-using Tutorial.Scripts.Core;
 using Zenject;
 
 namespace Tutorial.Scripts
@@ -9,7 +8,7 @@ namespace Tutorial.Scripts
         {
             SignalBusInstaller.Install(Container);
 
-            Container.DeclareSignal<Signals.PrintLogMessageSignal>();
+            Container.DeclareSignal<TutorialSignals.ChangeColorSignal>();
         }
     }
 }
