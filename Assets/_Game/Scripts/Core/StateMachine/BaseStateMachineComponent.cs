@@ -8,6 +8,8 @@ namespace Game.Scripts.Core
     public class BaseStateMachineComponent<TState> : TickerComponent
         where TState : struct, Enum
     {
+        protected readonly Dictionary<TState, BaseEntityNode<TState>> nodesDictionary = new();
+
         [SerializeReference]
         protected List<BaseEntityNode<TState>> nodes = new();
 
@@ -18,6 +20,18 @@ namespace Game.Scripts.Core
         public BaseEntityNode<TState> ActiveNode => currentNode;
 
         public TState ActiveState => currentState;
+        
+        public override void Init()
+        {
+            base.Init();
+
+            nodesDictionary.Clear();
+            for (int i = 0; i < nodes.Count; i++)
+            {
+                var node = nodes[i];
+                nodesDictionary.Add(node.NodeState, node);
+            }
+        }
 
         public override void Tick()
         {
@@ -28,18 +42,8 @@ namespace Game.Scripts.Core
         protected virtual void ResetState(TState state)
         {
             currentState = state;
-            for (int i = 0; i < nodes.Count; i++)
-            {
-                var node = nodes[i];
-                if (!StaticMethods.EnumEquals(node.NodeState, currentState))
-                {
-                    continue;
-                }
-
-                currentNode = node;
-                currentNode.Enter(currentState);
-                break;
-            }
+            currentNode = nodesDictionary[currentState];
+            currentNode.Enter(currentState);
         }
 
         protected void UpdateState(TState nextState)
@@ -50,20 +54,8 @@ namespace Game.Scripts.Core
                 return;
             }
 
-            BaseEntityNode<TState> nextNode = null;
-            for (int i = 0; i < nodes.Count; i++)
-            {
-                var node = nodes[i];
-                if (!StaticMethods.EnumEquals(node.NodeState, nextState))
-                {
-                    continue;
-                }
-
-                nextNode = node;
-                break;
-            }
-
-            if (nextNode == null)
+            var existsInNodes = nodesDictionary.TryGetValue(nextState, out var nextNode);
+            if (!existsInNodes)
             {
                 Debug.LogError($"Trying to transition to nonexistent state node: {nextState}");
                 return;
