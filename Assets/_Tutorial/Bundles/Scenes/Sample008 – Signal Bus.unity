@@ -569,7 +569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 453492598678695069, guid: 618bd9def62e60243b431b64fa7f30ad, type: 3}
       propertyPath: _pathToAsset
-      value: Assets/_Tutorial/Scripts/Examples/Signals/Signals.cs
+      value: Assets/_Tutorial/Scripts/Examples/Signals
       objectReference: {fileID: 0}
     - target: {fileID: 453492598678695069, guid: 618bd9def62e60243b431b64fa7f30ad, type: 3}
       propertyPath: _targetGameObject
