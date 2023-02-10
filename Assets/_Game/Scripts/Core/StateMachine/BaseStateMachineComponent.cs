@@ -25,12 +25,7 @@ namespace Game.Scripts.Core
         {
             base.Init();
 
-            nodesDictionary.Clear();
-            for (int i = 0; i < nodes.Count; i++)
-            {
-                var node = nodes[i];
-                nodesDictionary.Add(node.NodeState, node);
-            }
+            CreateNodesDictionary();
         }
 
         public override void Tick()
@@ -66,6 +61,16 @@ namespace Game.Scripts.Core
 
             currentNode.Enter(currentState);
             currentState = nextState;
+        }
+
+        private void CreateNodesDictionary()
+        {
+            nodesDictionary.Clear();
+            for (int i = 0; i < nodes.Count; i++)
+            {
+                var node = nodes[i];
+                nodesDictionary.Add(node.NodeState, node);
+            }
         }
     }
 }

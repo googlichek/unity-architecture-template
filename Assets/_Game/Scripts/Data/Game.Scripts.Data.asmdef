@@ -1,9 +1,7 @@
 {
-    "name": "Game.Scripts.Utils",
-    "rootNamespace": "Game.Scripts.Utils",
-    "references": [
-        "GUID:f94a82ee666680945b5fb15c65c4b0a7"
-    ],
+    "name": "Game.Scripts.Data",
+    "rootNamespace": "Game.Scripts.Data",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
