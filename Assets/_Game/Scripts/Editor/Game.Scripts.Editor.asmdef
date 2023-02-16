@@ -1,7 +1,9 @@
 {
     "name": "Game.Scripts.Editor",
     "rootNamespace": "Game.Scripts.Editor",
-    "references": [],
+    "references": [
+        "GUID:48d35e3a26632c844b3d551bf52ec3d9"
+    ],
     "includePlatforms": [
         "Editor"
     ],

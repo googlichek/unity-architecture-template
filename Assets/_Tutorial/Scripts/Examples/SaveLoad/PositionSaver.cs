@@ -14,16 +14,16 @@ namespace Tutorial.Scripts.Utils
             _saveLoadService = saveLoadService;
         }
 
-        public override void Enable()
+        public override void Init()
         {
-            base.Enable();
+            base.Init();
 
             Register(_saveLoadService);
         }
 
-        public override void Disable()
+        public override void Dispose()
         {
-            base.Disable();
+            base.Dispose();
 
             Delist(_saveLoadService);
         }

@@ -7,5 +7,12 @@ namespace Game.Scripts.Core
     public class Progress
     {
         public Vector3Data Position;
+
+        public SpawnerData SpawnerData;
+
+        public Progress()
+        {
+            SpawnerData = new SpawnerData();
+        }
     }
 }

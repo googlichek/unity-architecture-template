@@ -1,14 +1,13 @@
-using Game.Scripts.Core;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Tutorial.Scripts.Utils
+namespace Game.Scripts.Core
 {
-    public class ExamplePool : BasePool<PooledTickerBehaviour>
+    public class SimplePoolComponent : BasePoolComponent<PooledTickerBehaviour>
     {
         [FoldoutGroup("Pool Settings")]
         [SerializeReference]
-        private PooledTickerBehaviour _objectTemplate = default;
+        private PooledTickerBehaviour _template = default;
 
         [FoldoutGroup("Pool Settings")]
         [SerializeField]
@@ -31,41 +30,16 @@ namespace Tutorial.Scripts.Utils
         [Range(0, 1000)]
         private int _maxSize = 20;
 
-        [SerializeField]
-        [Range(0, 10)]
-        private float _spawnDelay = 2f;
-
-        private float _timeBeforeNextSpawn = -1;
-
         public override void Init()
         {
             base.Init();
 
             InitPool(
-                _objectTemplate,
+                _template,
                 _shouldUsePoolDefaults ? null : _root,
                 _shouldUsePoolDefaults ? 10 : _initialSize,
                 _shouldUsePoolDefaults ? 20 : _maxSize);
-        }
-
-        public override void Enable()
-        {
-            base.Enable();
-
-            _timeBeforeNextSpawn = _spawnDelay;
-        }
-
-        public override void Tick()
-        {
-            base.Tick();
-
-            if (_timeBeforeNextSpawn < 0)
-            {
-                Spawn();
-                _timeBeforeNextSpawn = _spawnDelay;
-            }
-
-            _timeBeforeNextSpawn -= Time.deltaTime;
+                
         }
 
         public override void Dispose()
@@ -73,14 +47,6 @@ namespace Tutorial.Scripts.Utils
             base.Dispose();
 
             DisposePool();
-        }
-
-        private void Spawn()
-        {
-            var spawnPosition = transform.position + (Random.insideUnitSphere * 5);
-
-            var spawnedObject = Get();
-            spawnedObject.transform.localPosition = spawnPosition;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
@@ -7,12 +8,16 @@ namespace Game.Scripts.Core
 {
     public abstract class TickerBehaviour : MonoBehaviour, ITicker
     {
+        public Action OnInit = default;
+        public Action OnDisposed = default;
+
         [SerializeField]
         protected Priority priority = Priority.Normal;
 
         [SerializeField]
         protected bool hasComponents = true;
 
+        [Title("Updated Components")]
         [SerializeReference]
         [ShowIf("hasComponents")]
         protected List<TickerComponent> components = new();
@@ -69,17 +74,19 @@ namespace Game.Scripts.Core
 
         public virtual void Init()
         {
-            // Override this method with base;
+            // Don't forget base;
 
             for (int i = 0; i < components.Count; i++)
             {
                 components[i].Init();
             }
+
+            OnInit?.Invoke();
         }
 
         public virtual void Enable()
         {
-            // Override this method with base;
+            // Don't forget base;
 
             for (int i = 0; i < components.Count; i++)
             {
@@ -89,7 +96,7 @@ namespace Game.Scripts.Core
 
         public virtual void PhysicsTick()
         {
-            // Override this method with base;
+            // Don't forget base;
 
             for (int i = 0; i < components.Count; i++)
             {
@@ -99,7 +106,7 @@ namespace Game.Scripts.Core
 
         public virtual void Tick()
         {
-            // Override this method with base;
+            // Don't forget base;
 
             for (int i = 0; i < components.Count; i++)
             {
@@ -109,7 +116,7 @@ namespace Game.Scripts.Core
 
         public virtual void CameraTick()
         {
-            // Override this method with base;
+            // Don't forget base;
 
             for (int i = 0; i < components.Count; i++)
             {
@@ -119,7 +126,7 @@ namespace Game.Scripts.Core
 
         public virtual void Disable()
         {
-            // Override this method with base;
+            // Don't forget base;
 
             for (int i = 0; i < components.Count; i++)
             {
@@ -129,12 +136,14 @@ namespace Game.Scripts.Core
 
         public virtual void Dispose()
         {
-            // Override this method with base;
+            // Don't forget base;
 
             for (int i = 0; i < components.Count; i++)
             {
                 components[i].Dispose();
             }
+
+            OnDisposed?.Invoke();
         }
     }
 }
