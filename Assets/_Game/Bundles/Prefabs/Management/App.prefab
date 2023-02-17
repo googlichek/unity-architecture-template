@@ -75,9 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8890ef8175f5ae442a182f7a23f4d0ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 3
-  hasComponents: 0
-  components: []
 --- !u!114 &-6606585738422559492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +87,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fce68e298842044e83936157e22e407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 3
-  hasComponents: 0
-  components: []

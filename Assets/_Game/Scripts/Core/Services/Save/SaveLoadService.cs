@@ -4,17 +4,15 @@ using UnityEngine;
 
 namespace Game.Scripts.Core
 {
-    public class SaveLoadService : TickerBehaviour, ISaveLoadService
+    public class SaveLoadService : MonoBehaviour, ISaveLoadService
     {
         private readonly List<ISavedProgressWriter> _progressWriters = new List<ISavedProgressWriter>();
         private readonly List<ISavedProgressReader> _progressReaders = new List<ISavedProgressReader>();
 
         private Progress _progress = default;
 
-        public override void Init()
+        void Awake()
         {
-            base.Init();
-
             InitializeProgress();
 
             _progressWriters.Clear();

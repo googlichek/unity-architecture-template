@@ -2,12 +2,12 @@ using Zenject;
 
 namespace Game.Scripts.Core
 {
-    public class EditorLoaderComponent : TickerComponent
+    public class EditorSaver : TickerComponent
     {
 #if UNITY_EDITOR
         private ISaveLoadService _saveLoadService = default;
 
-        private bool _isLoaded = false;
+        private bool _isSaved = false;
 
         [Inject]
         void Consrtuct(ISaveLoadService saveLoadService)
@@ -15,18 +15,17 @@ namespace Game.Scripts.Core
             _saveLoadService = saveLoadService;
         }
 
-        public override void Tick()
+        void OnApplicationQuit()
         {
-            base.Tick();
-
-            if (_isLoaded)
+            if (_isSaved)
             {
                 return;
             }
 
-            _saveLoadService.Load();
-            _isLoaded = true;
+            _saveLoadService.Save();
+            _isSaved = true;
         }
+
 #endif
     }
 }

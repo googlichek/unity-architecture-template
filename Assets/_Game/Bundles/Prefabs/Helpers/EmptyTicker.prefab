@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 2
-  hasComponents: 1
+  hasComponents: 0
   components: []
