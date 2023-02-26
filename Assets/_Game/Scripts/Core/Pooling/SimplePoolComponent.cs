@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.Scripts.Core
 {
-    public class SimplePoolComponent : BasePoolComponent<PooledTickerBehaviour>
+    public class SimplePoolComponent : BasePoolComponent
     {
         [FoldoutGroup("Pool Settings")]
         [SerializeReference]

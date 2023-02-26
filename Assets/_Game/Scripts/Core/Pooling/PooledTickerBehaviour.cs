@@ -1,17 +1,17 @@
 namespace Game.Scripts.Core
 {
-    public class PooledTickerBehaviour : TickerBehaviour, ISelfReleasingFromPool<PooledTickerBehaviour>
+    public class PooledTickerBehaviour : TickerBehaviour, IPoolItem
     {
-        protected IBasePoolRelease<PooledTickerBehaviour> _poolRelease = default;
+        protected BasePoolComponent pool;
 
-        public void Setup(IBasePoolRelease<PooledTickerBehaviour> basePoolRelease)
+        public void Setup(BasePoolComponent owningPool)
         {
-            _poolRelease = basePoolRelease;
+            pool = owningPool;
         }
 
         public void ReleaseSelf()
         {
-            _poolRelease.Release(this);
+            pool.Release(this);
         }
     }
 }

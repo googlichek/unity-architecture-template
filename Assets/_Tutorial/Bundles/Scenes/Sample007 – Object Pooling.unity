@@ -581,15 +581,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 894717394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece1bdadb34d3bc448647c3245f9f3e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 342206fb24b063c4d82871489efb3b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _objectTemplate: {fileID: 194126502140952909, guid: 7c1e96fe9e9728745bdd5f2f4e34c5c6, type: 3}
   _shouldUsePoolDefaults: 0
   _root: {fileID: 894717395}
-  _initialSize: 1000
-  _maxSize: 1000
-  _spawnDelay: 0.01
+  _initialSize: 10
+  _maxSize: 20
+  _spawnDelay: 0.6
 --- !u!1001 &915338890
 PrefabInstance:
   m_ObjectHideFlags: 0

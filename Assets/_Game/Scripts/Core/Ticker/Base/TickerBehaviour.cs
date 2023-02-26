@@ -9,6 +9,8 @@ namespace Game.Scripts.Core
     public abstract class TickerBehaviour : MonoBehaviour, ITicker
     {
         public Action OnInit = default;
+        public Action OnEnabled = default;
+        public Action OnDisabled = default;
         public Action OnDisposed = default;
 
         [SerializeField]
@@ -92,6 +94,8 @@ namespace Game.Scripts.Core
             {
                 components[i].Enable();
             }
+
+            OnEnabled?.Invoke();
         }
 
         public virtual void PhysicsTick()
@@ -132,6 +136,8 @@ namespace Game.Scripts.Core
             {
                 components[i].Disable();
             }
+
+            OnDisabled?.Invoke();
         }
 
         public virtual void Dispose()
