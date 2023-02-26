@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Tutorial.Scripts.Utils
 {
-    public class PositionSaver : TickerComponent, ISavedProgressWriter
+    public class PositionSaver : TickerComponent, ISaveProgressWriter
     {
         private ISaveLoadService _saveLoadService;
 

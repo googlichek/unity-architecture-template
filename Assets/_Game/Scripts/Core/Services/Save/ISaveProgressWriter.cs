@@ -1,6 +1,6 @@
 namespace Game.Scripts.Core
 {
-    public interface ISavedProgressWriter : ISavedProgressReader
+    public interface ISaveProgressWriter : ISaveProgressReader
     {
         void UpdateProgress(Progress progress);
     }

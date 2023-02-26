@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Game.Scripts.Editor
 {
     [CustomEditor(typeof(UniqueIdComponent))]
-    public class SaveIdEditor : UnityEditor.Editor
+    public class UniqueIdEditor : UnityEditor.Editor
     {
         private void OnEnable()
         {

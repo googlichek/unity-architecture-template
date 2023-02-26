@@ -1,6 +1,6 @@
 namespace Game.Scripts.Core
 {
-    public interface ISavedProgressReader
+    public interface ISaveProgressReader
     {
         void Register(ISaveLoadService saveLoadService);
 

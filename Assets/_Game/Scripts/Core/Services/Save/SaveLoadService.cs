@@ -6,8 +6,8 @@ namespace Game.Scripts.Core
 {
     public class SaveLoadService : MonoBehaviour, ISaveLoadService
     {
-        private readonly List<ISavedProgressWriter> _progressWriters = new List<ISavedProgressWriter>();
-        private readonly List<ISavedProgressReader> _progressReaders = new List<ISavedProgressReader>();
+        private readonly List<ISaveProgressWriter> _progressWriters = new List<ISaveProgressWriter>();
+        private readonly List<ISaveProgressReader> _progressReaders = new List<ISaveProgressReader>();
 
         private Progress _progress = default;
 
@@ -19,7 +19,7 @@ namespace Game.Scripts.Core
             _progressReaders.Clear();
         }
 
-        public void AddWriter(ISavedProgressWriter writer)
+        public void AddWriter(ISaveProgressWriter writer)
         {
             if (!_progressWriters.Contains(writer))
             {
@@ -27,7 +27,7 @@ namespace Game.Scripts.Core
             }
         }
 
-        public void AddReader(ISavedProgressReader reader)
+        public void AddReader(ISaveProgressReader reader)
         {
             if (!_progressReaders.Contains(reader))
             {
@@ -35,7 +35,7 @@ namespace Game.Scripts.Core
             }
         }
 
-        public void RemoveWriter(ISavedProgressWriter writer)
+        public void RemoveWriter(ISaveProgressWriter writer)
         {
             if (_progressWriters.Contains(writer))
             {
@@ -43,7 +43,7 @@ namespace Game.Scripts.Core
             }
         }
 
-        public void RemoveReader(ISavedProgressReader reader)
+        public void RemoveReader(ISaveProgressReader reader)
         {
             if (_progressReaders.Contains(reader))
             {

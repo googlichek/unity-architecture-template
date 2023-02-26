@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Game.Scripts.Core
 {
-    public class FiniteSpawnerComponent : TickerComponent, ISpawner, ISavedProgressWriter
+    public class FiniteSpawnerComponent : TickerComponent, ISpawner, ISaveProgressWriter
     {
         [FoldoutGroup("Spawner Settings", true)]
         [Required]

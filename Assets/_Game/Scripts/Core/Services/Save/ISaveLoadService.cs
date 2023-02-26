@@ -2,13 +2,13 @@ namespace Game.Scripts.Core
 {
     public interface ISaveLoadService
     {
-        void AddWriter(ISavedProgressWriter writer);
+        void AddWriter(ISaveProgressWriter writer);
 
-        void AddReader(ISavedProgressReader reader);
+        void AddReader(ISaveProgressReader reader);
 
-        void RemoveWriter(ISavedProgressWriter writer);
+        void RemoveWriter(ISaveProgressWriter writer);
 
-        void RemoveReader(ISavedProgressReader reader);
+        void RemoveReader(ISaveProgressReader reader);
 
         void Save();
 
