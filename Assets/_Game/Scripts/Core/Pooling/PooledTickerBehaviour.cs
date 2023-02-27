@@ -1,10 +1,10 @@
 namespace Game.Scripts.Core
 {
-    public class PooledTickerBehaviour : TickerBehaviour, IPoolItem
+    public class PooledTickerBehaviour : TickerBehaviour, IPoolItem<PooledTickerBehaviour>
     {
-        protected BasePoolComponent pool;
+        protected BasePoolComponent<PooledTickerBehaviour> pool;
 
-        public void Setup(BasePoolComponent owningPool)
+        public void Setup(BasePoolComponent<PooledTickerBehaviour> owningPool)
         {
             pool = owningPool;
         }

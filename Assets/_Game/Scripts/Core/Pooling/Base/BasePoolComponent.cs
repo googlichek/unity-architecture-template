@@ -4,11 +4,12 @@ using Zenject;
 
 namespace Game.Scripts.Core
 {
-    public abstract class BasePoolComponent : TickerComponent
+    public abstract class BasePoolComponent<T> : TickerComponent, IPool<T>
+        where T : MonoBehaviour, IPoolItem<T>
     {
-        private PooledTickerBehaviour _prefab = default;
+        private T _prefab = default;
 
-        private ObjectPool<PooledTickerBehaviour> _pool = default;
+        private ObjectPool<T> _pool = default;
 
         private DiContainer _diContainer = default;
 
@@ -18,18 +19,18 @@ namespace Game.Scripts.Core
             _diContainer = diContainer;
         }
 
-        public PooledTickerBehaviour Get()
+        public T Get()
         {
             return _pool.Get();
         }
 
-        public void Release(PooledTickerBehaviour instance)
+        public void Release(T instance)
         {
             _pool.Release(instance);
         }
 
         protected void InitPool(
-            PooledTickerBehaviour poolPrefab,
+            T poolPrefab,
             Transform poolRoot = null,
             int initial = 10,
             int max = 20,
@@ -38,7 +39,7 @@ namespace Game.Scripts.Core
             _prefab = poolPrefab;
 
             _pool =
-                new ObjectPool<PooledTickerBehaviour>(
+                new ObjectPool<T>(
                     () => CreateInstance(poolRoot),
                     GetInstance,
                     ReleaseInstance,
@@ -53,25 +54,25 @@ namespace Game.Scripts.Core
             _pool.Dispose();
         }
 
-        protected virtual PooledTickerBehaviour CreateInstance(Transform root)
+        protected virtual T CreateInstance(Transform root)
         {
-            var instance = _diContainer.InstantiatePrefabForComponent<PooledTickerBehaviour>(_prefab, root);
+            var instance = _diContainer.InstantiatePrefabForComponent<T>(_prefab, root);
             instance.Setup(this);
 
             return instance;
         }
 
-        protected virtual void GetInstance(PooledTickerBehaviour instance)
+        protected virtual void GetInstance(T instance)
         {
             instance.gameObject.SetActive(true);
         }
 
-        protected virtual void ReleaseInstance(PooledTickerBehaviour instance)
+        protected virtual void ReleaseInstance(T instance)
         {
             instance.gameObject.SetActive(false);
         }
 
-        protected virtual void DestroyInstance(PooledTickerBehaviour instance)
+        protected virtual void DestroyInstance(T instance)
         {
             Destroy(instance);
         }

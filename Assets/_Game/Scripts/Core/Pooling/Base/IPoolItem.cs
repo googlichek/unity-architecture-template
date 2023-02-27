@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.Scripts.Core
 {
-    public interface IPoolItem
+    public interface IPoolItem<T>
+        where T : MonoBehaviour, IPoolItem<T>
     {
-        void Setup(BasePoolComponent owningPool);
+        void Setup(BasePoolComponent<T> owningPool);
 
         void ReleaseSelf();
     }

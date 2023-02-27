@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Tutorial.Scripts.Utils
 {
-    public class ExamplePoolComponent : BasePoolComponent
+    public class ExamplePoolComponent : BasePoolComponent<PooledTickerBehaviour>
     {
         [FoldoutGroup("Pool Settings")]
         [SerializeReference]
