@@ -18,26 +18,26 @@ namespace Tutorial.Scripts.Utils
         {
             base.Init();
 
-            Register(_saveLoadService);
+            Register();
         }
 
         public override void Dispose()
         {
             base.Dispose();
 
-            Delist(_saveLoadService);
+            Delist();
         }
 
-        public void Register(ISaveLoadService saveLoadService)
+        public void Register()
         {
-            saveLoadService.AddWriter(this);
-            saveLoadService.AddReader(this);
+            _saveLoadService.AddWriter(this);
+            _saveLoadService.AddReader(this);
         }
 
-        public void Delist(ISaveLoadService saveLoadService)
+        public void Delist()
         {
-            saveLoadService.RemoveWriter(this);
-            saveLoadService.RemoveReader(this);
+            _saveLoadService.RemoveWriter(this);
+            _saveLoadService.RemoveReader(this);
         }
 
         public void LoadProgress(Progress progress)

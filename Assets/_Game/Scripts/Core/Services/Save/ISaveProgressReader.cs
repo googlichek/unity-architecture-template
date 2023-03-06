@@ -2,9 +2,9 @@ namespace Game.Scripts.Core
 {
     public interface ISaveProgressReader
     {
-        void Register(ISaveLoadService saveLoadService);
+        void Register();
 
-        void Delist(ISaveLoadService saveLoadService);
+        void Delist();
 
         void LoadProgress(Progress progress);
     }
