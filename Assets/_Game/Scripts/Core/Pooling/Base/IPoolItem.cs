@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Game.Scripts.Core
 {
     public interface IPoolItem<T>

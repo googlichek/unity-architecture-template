@@ -33,6 +33,12 @@ namespace Game.Scripts.Core
                 .FromComponentInHierarchy()
                 .AsSingle()
                 .NonLazy();
+
+            Container
+                .Bind<IAssetProvider>()
+                .FromComponentInHierarchy()
+                .AsSingle()
+                .NonLazy();
         }
     }
 }
