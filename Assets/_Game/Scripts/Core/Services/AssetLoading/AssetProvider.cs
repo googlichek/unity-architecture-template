@@ -23,7 +23,7 @@ namespace Game.Scripts.Core
 
         public async UniTask<T> Load<T>(AssetReference assetReference) where T : class
         {
-            if (_completedHandlesCache.TryGetValue(assetReference.AssetGUID, out AsyncOperationHandle completedHandle))
+            if (_completedHandlesCache.TryGetValue(assetReference.AssetGUID, out var completedHandle))
             {
                 return completedHandle.Result as T;
             }
@@ -35,12 +35,12 @@ namespace Game.Scripts.Core
 
         public async UniTask<T> Load<T>(string address) where T : class
         {
-            if (_completedHandlesCache.TryGetValue(address, out AsyncOperationHandle completedHandle))
+            if (_completedHandlesCache.TryGetValue(address, out var completedHandle))
             {
                 return completedHandle.Result as T;
             }
 
-            AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(address);
+            var handle = Addressables.LoadAssetAsync<T>(address);
 
             return await RunWithCacheOnComplete(
                 Addressables.LoadAssetAsync<T>(address),
@@ -49,9 +49,9 @@ namespace Game.Scripts.Core
 
         public void Cleanup()
         {
-            foreach (List<AsyncOperationHandle> resourceHandles in _handles.Values)
+            foreach (var resourceHandles in _handles.Values)
             {
-                foreach (AsyncOperationHandle handle in resourceHandles)
+                foreach (var handle in resourceHandles)
                 {
                     Addressables.Release(handle);
                 }
@@ -72,7 +72,7 @@ namespace Game.Scripts.Core
 
         private void AddHandle<T>(string key, AsyncOperationHandle handle) where T : class
         {
-            if (!_handles.TryGetValue(key, out List<AsyncOperationHandle> resourceHandles))
+            if (!_handles.TryGetValue(key, out var resourceHandles))
             {
                 resourceHandles = new List<AsyncOperationHandle>();
                 _handles[key] = resourceHandles;
