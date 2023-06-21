@@ -16,67 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: ee0ac1a6935b7934495c1eff3eec79fb
-  m_SerializeEntries:
-  - m_GUID: cca57ff7adb2af2419fcbe5186c2c315
-    m_Address: "Sample001 \u2013 Introduction to DI"
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-  - m_GUID: d2526ff303b5d4943b45fe26ed5b8ba9
-    m_Address: "Sample000 \u2013 Introduction to the Project"
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-  - m_GUID: 70fbbfac861252b4bb556673c2790a43
-    m_Address: "Sample003 \u2013 Installers"
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-  - m_GUID: 5145a08b14ac45b448b0fc0a115cd545
-    m_Address: "Sample002 \u2013 DI Contexts"
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-  - m_GUID: 5a547c21b1e85564d9aebfcdcc41942e
-    m_Address: "Sample004 \u2013 Injecting Dependencies"
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-  - m_GUID: 09611f58f544c8645b4dd6c3114cc75e
-    m_Address: "Sample005 \u2013 Custom Game Loop Update"
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-  - m_GUID: a93538199735595439368a944dadea76
-    m_Address: "Sample006 \u2013 Tickers"
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-  - m_GUID: 37b195843dd714a4b967aeb394734187
-    m_Address: "Sample007 \u2013 Object Pooling"
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-  - m_GUID: 3b0d39e05891dd6478db98e576a0ca03
-    m_Address: "Sample008 \u2013 Signal Bus"
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-  - m_GUID: f615a45932a67c24580e52d52aff38f6
-    m_Address: "Sample009 \u2013 State"
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-  - m_GUID: 54ab9d254be5c8e4ea8b7d0223fdde45
-    m_Address: Sample010 - Save System
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-  - m_GUID: 6f2dc734698da77429a2c95993ca75fe
-    m_Address: The End
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7e1c476d16e42724b8fa4d706d4e1176, type: 2}
   m_SchemaSet:

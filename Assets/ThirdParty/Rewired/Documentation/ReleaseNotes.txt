@@ -1,3 +1,25 @@
+1.1.45.0:
+  
+  Changes:
+    - Added Unity 2023 branch.
+    - Updated internal GUIText component for breaking change in Unity 2022.2+ removing Arial.ttf from default assets.
+    - Exceptions thrown by event handlers and caught by Rewired are now logged as exceptions instead of as errors so they can be handled by tools such as Sentry.
+    
+  API Changes:
+    - Added ControllerMap.ElementMaps property (alias for AllMaps property).
+
+  Modified Controller Definitions:
+    - Updated Microsoft Xbox One Controller definition to account for breaking changes to mappings, presumably due to firmware updates, on Linux Native, and added additional identifiers to match more Xbox Series S|X controllers.
+    - Added Menu, Left Stick Button, and Right Stick Button bindings to Gamepad Template map for Apple MFi Controller.
+
+  Bug Fixes:
+    - Fixed PlayerController.GetElement returning only Axis elements.
+    - Fixed PlayerController.Element.name always returning null.
+    - Added workaround for Mono bug? that caused allocation of 32 bytes of garbage periodically in Windows.
+    - Windows Standalone, MacOS Standalone, with Enhanced Device Support enabled: Fixed infinitely-expanding buffer in memory caused by input event buffer on Sony DualShock 4 and Sony DualSense controllers in the Unity editor when pausing Play mode and in builds when the application is out of focus and the Unity Player setting "Run in Background" is false.
+    - Fixed bug causing negative Axis Contribution on Actions bound to a trigger to be lost when converting a Gamepad Template Map to a Controller Map using ControllerTemplateMap.ToControllerMap when the gamepad has digital buttons instead of analog triggers.
+    - Fixed UWP platform compiler errors in Unity 2022+.
+
 1.1.44.0:
 
   Changes:
@@ -6,7 +28,7 @@
     - Internal changes to allow Rewired plugins to optionally run target platform-specific code in the Unity editor.
   
   API Changes:
-    - Added Rewired.Platforms.Apple.GameController.GCControllerShock4Extension.SetLightColor functions.
+    - Added Rewired.Platforms.Apple.GameController.GCControllerDualShock4Extension.SetLightColor functions.
     - Added Rewired.Platforms.Apple.GameController.GCControllerDualSenseExtension.SetLightColor functions.
     
   Bug Fixes:

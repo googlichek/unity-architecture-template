@@ -6283,6 +6283,7 @@
         <member name="F:Rewired.Config.LogLevelFlags.Off">
             <summary>
             Nothing is logged.
+            Note: Exceptions will always be logged regardless of this setting.
             </summary>
         </member>
         <member name="F:Rewired.Config.LogLevelFlags.Info">
@@ -14387,6 +14388,12 @@
         <member name="P:Rewired.ControllerMap.AllMaps">
             <summary>
             Gets all ActionElementMaps in this controller map.
+            </summary>
+        </member>
+        <member name="P:Rewired.ControllerMap.ElementMaps">
+            <summary>
+            Gets all ActionElementMaps in this controller map.
+            Alias for <see cref="P:Rewired.ControllerMap.AllMaps"/>.
             </summary>
         </member>
         <member name="P:Rewired.ControllerMap.ButtonMaps">

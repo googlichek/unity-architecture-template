@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: AppleiOSMfiController
   m_EditorClassIdentifier: 
   controllerName: Controller
-  editorControllerName: iOS MFi Gamepad
+  editorControllerName: Apple MFi Gamepad
   description: MFi game controller based on extended profile
   controllerGuid: 3d919cfa-468e-49f4-bce9-f6c43f2e7e62
   templateGuids:
